@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <title>Space tourism website</title>
+  <link rel="stylesheet" href="./styles/moon.css">
+  <link rel="stylesheet" href="./styles/base.css">
+</head>
+
+<body>
+  <nav class="home-nav">
+    <a href="../index.html"> <img class="logo" src="./assets/shared/logo.svg" alt=""></a>
+    <ul class="home-list">
+      <a href="../index.html">
+        <li><span class="number">00</span>Home</li>
+      </a>
+      <a href="destination-moon.html">
+        <li class="active-li"><span class="number">01</span>Destination</li>
+      </a>
+      <a href="crew-commander.html">
+        <li><span class="number">02</span>Crew</li>
+      </a>
+      <a href="technology-vehicle.html">
+        <li><span class="number">03</span>Technology</li>
+      </a>
+    </ul>
+    <img class="burger" src="./assets/shared/icon-hamburger.svg" alt="">
+  </nav>
+
+  <h2 class="title"><span class="title-span">01</span>pick your destination</h2>
+
+  <div class="planet-container">
+
+    <div class="planet-info-box">
+      <ul class="select-planet">
+        <a href="destination-moon.html">
+          <li>moon</li>
+        </a>
+        <a href="destination-mars.html">
+          <li>mars</li>
+        </a>
+        <a href="destination-europa.html">
+          <li>europa</li>
+        </a>
+        <a href="destination-titan.html">
+          <li class='planet-active'>titan</li>
+        </a>
+      </ul>
+
+      <img src="./assets/destination/image-titan.webp" alt="">
+
+      <div class="planet-text">
+        <h1 id="planet">titan</h1>
+        <p class="planet-desc"> The only moon known to have a dense atmosphere other than Earth, Titan
+          is a home away from home (just a few hundred degrees colder!). As a
+          bonus, you get striking views of the Rings of Saturn.</p>
+
+        <div class="travel">
+          <h5>Avg. distance <span id="distance">1.6 bil. km</span></h5>
+          <h5>est. travel time <span id="time">7 years</span></h5>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="../scripts/dest.js"></script>
+
+</body>
+
+</html>

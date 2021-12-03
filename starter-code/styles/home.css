@@ -1,0 +1,472 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Zen+Maru+Gothic:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+:root{
+    --blueish: #9093A7;
+    --zen: 'Open Sans Condensed', sans-serif;
+    --belle: 'Bellefair', serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('../assets/home/bgMobile.jpg');
+    background-size: cover;
+    font-family: var(--zen), sans-serif;
+    letter-spacing: 3px;
+    min-height: 100vh;
+    transition: 0.2s;
+    overflow-x: hidden;
+}
+
+.blur{
+    filter:blur(5px);
+}
+
+.home-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px 0;
+}
+
+.home-list {
+    list-style: none;
+    display: none;
+    transition: 0.3s;
+}
+
+.home-list.on {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 0;
+    border: none;
+}
+.span-a {
+    text-decoration: none;
+    color: #000;
+}
+
+.home-list a {
+    text-decoration: none;
+    color: var(--blueish);
+}
+
+
+.home-list li {
+    margin: 0 15px;
+    font-size: 36px;
+    font-weight: bolder;
+    text-align:  center;
+    z-index: 4;
+    position: relative;
+    text-transform: uppercase;
+}
+
+span.number {
+    display: none;
+    padding-right: 20px;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.home-list li.active-li::before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+.home-list li.active-li:hover {
+    border-bottom: 0px;
+}
+
+.home-list li::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0px;
+    width: 0;
+    background-color: #000;
+    transition: 0.5s;
+}
+
+.home-list li:hover{
+    color: #ccc;
+}
+
+.home-list li:hover::before {
+    height: 3px;
+    background: #ccc;
+    width: 100%;
+}
+
+.text {
+    padding: 10vh 25px 40px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    overflow-x: hidden;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding-bottom: 10px;
+    color: var(--blueish);
+    font-family: var(--zen);
+    font-weight: bolder;
+    letter-spacing: 3.5px;
+    transition: 0.30s;
+}
+
+
+
+h1{
+    text-align: center;
+    font-size: 100px;
+    color: #fff;
+    font-weight: lighter;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-family: var(--belle);
+    transition: 0.35s;
+
+}
+
+p{
+    text-align: center;
+    line-height: 30px;
+    color: var(--blueish);
+    font-family: var(--zen);
+    font-size: 17px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    transition: 0.4s;
+}
+
+.explore {
+    border-radius: 50%;
+    background-color: #fff;
+    height: 160px;
+    width: 160px;
+    display: inline-block;
+    text-align: center;
+    line-height: 170px;
+    transform:translateX(-50%);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-family: var(--belle);
+    margin-top: 50px;
+    transition: 0.45s;
+    position: absolute;
+    left: 50%;
+    bottom: 5vh;
+}
+
+
+.right{
+    transform: translateX(125%);
+    opacity: 0;
+}
+
+.left{
+    transform: translateX(-250%);
+    opacity: 0;
+
+}
+
+img.logo{
+    transition: 0.5s;
+}
+
+img.logo:hover{
+    transform: rotate(360deg);
+
+}
+
+img.burger {
+    cursor: pointer;
+    transition: 0.4s;
+    z-index: 3;
+}
+
+.burger.flip{
+    transform: rotate(450deg);
+}
+
+@media (min-width: 320px) and (max-width:374px){
+    .text{
+        padding-top: 10%;
+    }
+
+    .text h2{
+        padding-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .text h1{
+        font-size: 80px;
+        padding-bottom: 10px;
+
+    }
+
+    .text p{
+        font-size: 15px;
+        line-height: 22px;
+    }
+    .explore{
+        height: 120px;
+        width: 120px;
+        line-height: 120px;
+        font-size: 1rem;
+    }
+} 
+
+
+
+
+@media only screen and (min-width: 768px){
+
+    body{
+        background-image: url('../assets/home/bgTablet.jpg');
+    }
+
+    .home-nav{
+        padding: 0;
+        padding-left: 40px;
+        margin-bottom: 20px;
+        height: 100px;
+    }
+
+    .home-list {
+        display: flex;
+        width: 65%;
+        height: 100%;
+        position: relative;
+        background: #131522;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 30px;
+    }
+    
+    .home-list.on {
+        display: none;
+    }
+    
+    .home-list li {
+        padding: 28px 0;
+        color: rgb(177, 177, 177);
+        font-size: 17px;
+    }
+
+    img.burger{
+        display: none;
+    }
+
+    /* text */
+    
+    h2 {
+        font-size: 25px;
+        padding-bottom: 5px;
+    }
+    
+    h1{
+        text-align: center;
+        font-size: 160px;
+        color: #fff;
+        font-weight: lighter;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+        font-family: var(--belle);
+        transition: 0.35s;
+    }
+    
+    p{
+        font-size: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .explore {
+        height: 250px;
+        width: 250px;
+        line-height: 250px;
+        font-size: 1.7rem;
+        margin-top: 150px;
+        bottom: 5vh;
+    }
+
+    .explore:hover {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media (min-width: 1024px) and (max-height: 1366px){
+
+
+    .text{
+        left: 100px;
+        max-width: 1000px;
+    }
+
+    h2 {
+        font-size: 25px;
+        padding-bottom: 25px;
+        font-size: 40px;
+    }
+    
+    h1{
+        font-size: 200px;
+    }
+    
+    p{
+        font-size: 26px;
+        line-height: 50px;
+        max-width: 600px;
+    }
+
+    .explore {
+        bottom: 15vh;
+        height: 300px;
+        width: 300px;
+        line-height: 300px;
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1092px) {
+
+    body{
+        background-image: url('../assets/home/bgDesktop.jpg');
+        overflow-y: hidden;
+    }
+
+    span.number{
+        display: inline;
+    }
+
+    .home-nav{
+        margin-top: 30px;
+        height: 100px;
+        position: relative;
+    }
+
+    .home-list {
+        background: transparent;
+        backdrop-filter: blur(50px);
+        padding: 0 60px;
+    }
+    
+    .home-list::after{
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        background-color: rgb(109, 109, 109);
+        height: 1px;
+        left: -45%;
+        position: absolute;
+    }
+
+    .home-list.on {
+        display: none;
+    }
+    
+    .home-list li {
+        padding: 28px 0;
+        color: rgb(177, 177, 177);
+        font-size: 17px;
+        transition: 0.3s;
+    }
+
+    .home-list li:hover {
+        color: #fff;
+    }
+
+    img.burger{
+        display: none;
+    }
+
+    /* text */
+
+    .text{
+        position: absolute;
+        left: 15vh;
+        top: 60%;
+        transform: translateY(-50%);
+    }
+
+    h2 {
+        font-size: 25px;
+        padding-bottom: 25px;
+        text-align: left;
+    }
+    
+    h1{
+        text-align: left;
+        font-size: 160px;
+        color: #fff;
+        font-weight: lighter;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+        font-family: var(--belle);
+        transition: 0.35s;
+    }
+    
+    p{
+        font-size: 20px;
+        max-width: 500px;
+        text-align: left;
+        line-height: 40px;
+    }
+
+    .explore {
+        height: 300px;
+        width: 300px;
+        line-height: 300px;
+        font-size: 1.9rem;
+        margin-top: 0;
+        position: absolute;
+        left: 78%;
+        bottom: 13%;
+   }
+
+   .explore:hover {
+    font-size: 2rem;
+}
+
+}
+
+

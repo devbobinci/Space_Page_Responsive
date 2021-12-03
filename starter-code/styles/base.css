@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Zen+Maru+Gothic:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+:root{
+    --blueish: #9093A7;
+    --zen: 'Open Sans Condensed', sans-serif;
+    --belle: 'Bellefair', serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-size: cover;
+    font-family: var(--zen), sans-serif;
+    letter-spacing: 3px;
+    min-height: 100vh;
+    transition: 0.2s;
+    overflow-x: hidden;
+}
+
+h1{
+    text-transform: uppercase;
+    color: #fff;
+}
+
+p{
+    color: #fff;
+}
+
+.blur{
+    filter:blur(5px);
+}
+
+.home-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px 0;
+}
+
+.home-list {
+    list-style: none;
+    display: none;
+    transition: 0.3s;
+}
+
+.home-list.on {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 0;
+    border: none;
+}
+.span-a {
+    text-decoration: none;
+    color: #000;
+}
+
+.home-list a {
+    text-decoration: none;
+    color: var(--blueish);
+}
+
+
+.home-list li {
+    margin: 0 15px;
+    font-size: 36px;
+    font-weight: bolder;
+    text-align:  center;
+    z-index: 4;
+    position: relative;
+    text-transform: uppercase;
+}
+
+span.number {
+    display: none;
+    padding-right: 20px;
+    font-weight: bolder;
+    color: #fff;
+}
+
+ul a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.home-list li.active-li::before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+.home-list li.active-li:hover {
+    border-bottom: 0px;
+}
+
+.home-list li::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0px;
+    width: 0;
+    background-color: #000;
+    transition: 0.5s;
+}
+
+.home-list li:hover{
+    color: #ccc;
+}
+
+.home-list li:hover::before {
+    height: 3px;
+    background: #ccc;
+    width: 100%;
+}
+
+.right{
+    transform: translateX(125%);
+    opacity: 0;
+}
+
+.left{
+    transform: translateX(-250%);
+    opacity: 0;
+
+}
+
+img.logo{
+    transition: 0.5s;
+}
+
+img.logo:hover{
+    transform:rotate(360deg);
+}
+
+img.burger {
+    cursor: pointer;
+    transition: 0.4s;
+    z-index: 3;
+    position: display;
+    right: 30px;
+
+}
+
+.burger.flip{
+    transform: rotate(450deg);
+}
+
+@media only screen and (min-width: 768px){
+
+    .home-nav{
+        padding: 0;
+        padding-left: 40px;
+        margin-bottom: 20px;
+        height: 100px;
+    }
+
+    .home-list {
+        display: flex;
+        width: 65%;
+        height: 100%;
+        position: relative;
+        background: #131522;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 30px;
+    }
+    
+    .home-list.on {
+        display: none;
+    }
+    
+    .home-list li {
+        padding: 28px 0;
+        color: rgb(177, 177, 177);
+        font-size: 17px;
+    }
+
+    img.burger{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1092px) {
+
+    body{
+        overflow-y: hidden;
+    }
+
+    span.number{
+        display: inline;
+    }
+
+    .home-nav{
+        margin-top: 30px;
+        height: 100px;
+        position: relative;
+    }
+
+    .home-list {
+        background: transparent;
+        backdrop-filter: blur(50px);
+        padding: 0 60px;
+    }
+    
+    .home-list::after{
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        background-color: rgb(109, 109, 109);
+        height: 1px;
+        left: -45%;
+        position: absolute;
+    }
+
+    .home-list.on {
+        display: none;
+    }
+    
+    .home-list li {
+        padding: 28px 0;
+        color: rgb(177, 177, 177);
+        font-size: 17px;
+        transition: 0.3s;
+    }
+
+    .home-list li:hover {
+        color: #fff;
+    }
+
+    img.burger{
+        display: none;
+    }
+
+
+}

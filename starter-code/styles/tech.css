@@ -1,0 +1,212 @@
+:root{
+    --blueish: #9093A7;
+    --zen: 'Open Sans Condensed', sans-serif;
+    --belle: 'Bellefair', serif;
+}
+
+body{
+    background-image: url('../assets/technology/background-technology-mobile.jpg');
+    overflow-x: hidden ;
+}
+
+.title-span{
+    color: rgb(168, 168, 168);
+    padding-right: 20px;
+}
+
+.title{
+    text-align: center;
+    color: #fff;
+    padding-top: 0px;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 3px;
+    transition: 0.3s;
+    padding-top: 50px;
+}
+
+.tech-container{
+    padding: 20px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slide-select {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
+.slide-select a{
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    font-weight: bolder;
+    font-family: var(--belle);
+    font-size: 20px;
+    border: 1px solid #555;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+
+.slide-select a:hover{
+    transform:scale(1.05);
+}
+
+a.span-active{
+    background-color: #fff;
+    color: #000;
+    border: none;
+}
+
+.tech-container h5{
+    color: var(--blueish);
+    text-transform: uppercase;
+    font-size: 17px;
+    padding-top: 30px;
+    padding-left: 15px;
+    text-align: center;
+}
+
+.tech-container h1{
+    color: white;
+    font-size: 55px;
+    padding: 15px 20px;
+}
+
+.tech-container img{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+.tech-container p {
+    font-size: 18px;
+    text-align: left;
+    padding: 10px 20px;
+}
+
+.tablet-box{
+    display:flex;
+    flex-direction: column-reverse;
+}
+
+@media only screen and (min-width: 768px){
+    body{
+        background-image: url('../assets/technology/background-technology-tablet.jpg');
+    }
+
+    .slide-select {
+        width: 30%;
+    }
+    
+    .tech-container img{
+        width: 35%;
+        padding: 20px 0;
+    }
+
+    .tablet-box{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row-reverse;
+        width: 100%;
+        padding-top: 100px;
+        width: 90%;
+        align-items: center;
+    }
+
+    .tech-container p{
+        padding-left: 30px;
+        font-size: 19px;
+    }
+ 
+}
+ 
+ @media only screen and (min-width: 1092px){
+    body{
+        position: relative;
+        background-image: url('../assets/technology/background-technology-desktop.jpg');
+    }
+
+    .title{
+        text-align: left;
+        font-size: 28px;
+        padding-left: 9.5%;
+    }
+    
+    .tech-container{
+        padding: 20px 20px 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        max-width: 1700px;
+        margin: 0 auto;
+        padding-left: 100px;
+    }
+    
+    .slide-select {
+        width: 100px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        margin-top: 50px;
+    }
+    
+    .slide-select a{
+       height: 80px;
+       width: 80px;
+       margin-bottom: 30px;
+       line-height: 80px;
+       font-size: 22px;
+    }
+    
+    .pc-box{
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+    }
+
+    .tablet-box{
+        padding: 0;
+        width: 80%;
+    }
+
+    .tech-container h1{
+        color: white;
+        font-size: 70px;
+        padding: 15px 10px;
+    }
+    
+    .tech-container img{
+        width: 30%;
+        position: absolute;
+        right: 0;
+        top: 200px;
+    }
+    
+    .tech-container h5{
+        text-align: left;
+        padding-left: 0px;
+    }
+
+    .tech-container p {
+        font-size: 20px;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+
+    }
+
+}
